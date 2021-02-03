@@ -1,0 +1,16 @@
+.grayBar {
+	background-color: rgb(221, 221, 221);
+	width: 350px;
+	height: 15px;
+	border-radius: 4px;
+}
+
+.greenBar {
+	background-color: #49a249;
+	position: relative;
+	z-index: 3;
+	height: 15px;
+	width: 90px;
+	margin-top: -15px;
+	border-radius: 4px;
+}

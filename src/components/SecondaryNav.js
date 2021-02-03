@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: "rgb(247,247,247)",
 		boxShadow: "none",
 	},
+	link: {
+		textDecoration: "none",
+	},
 }));
 
 const SecondaryNav = () => {
@@ -21,7 +24,7 @@ const SecondaryNav = () => {
 						<Button>Overview</Button>
 						<Button>Goals</Button>
 						<Button>Transactions</Button>
-						<Link to='/budget'>
+						<Link to='/budget' className={classes.link}>
 							<Button>Budgets</Button>
 						</Link>
 					</Grid>

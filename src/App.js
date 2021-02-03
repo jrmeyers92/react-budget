@@ -4,13 +4,13 @@ import Login from "./pages/Login";
 import Overview from "./pages/Overview";
 import Nav from "./components/Nav";
 import SecondaryNav from "./components/SecondaryNav";
-import Budget from "./pages/Budget";
+import Budget from "./pages/Budget/Budget";
 import { Switch, Route } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
 	App: {
-		backgroundColor: "rgb(255,255,255)",
+		backgroundColor: "rgb(250,250,250)",
 	},
 }));
 
