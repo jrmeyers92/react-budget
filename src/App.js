@@ -7,6 +7,7 @@ import SecondaryNav from "./components/SecondaryNav";
 import Budget from "./pages/Budget/Budget";
 import { Switch, Route } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import { ExpenseProvider } from "./State/ExpenseContext";
 
 const useStyles = makeStyles((theme) => ({
 	App: {
@@ -38,11 +39,13 @@ function App() {
 					<SecondaryNav />
 					<Overview />
 				</Route>
-				<Route path='/budget'>
-					<Nav userName={userName} />
-					<SecondaryNav />
-					<Budget />
-				</Route>
+				<ExpenseProvider>
+					<Route path='/budget'>
+						<Nav userName={userName} />
+						<SecondaryNav />
+						<Budget />
+					</Route>
+				</ExpenseProvider>
 			</Switch>
 		</div>
 	);

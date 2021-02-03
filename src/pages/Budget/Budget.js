@@ -1,25 +1,13 @@
-import { makeStyles } from "@material-ui/styles";
-import React from "react";
-
-const useStyles = makeStyles((theme) => ({
-	innerGrid: {
-		padding: "2rem",
-	},
-	button: {
-		color: "#333",
-		margin: "1rem",
-	},
-	addIcon: {
-		marginRight: ".5rem",
-	},
-	paper: {
-		height: "70vh",
-	},
-}));
+import React, { useContext } from "react";
+import { ExpenseContext } from "../../State/ExpenseContext";
 
 const Budget = () => {
-	const classes = useStyles();
-	return <div>hi</div>;
+	const expenses = useContext(ExpenseContext);
+	const title = expenses.map((expense) => {
+		return <h1>{expense.name}</h1>;
+	});
+
+	return <div>{title}</div>;
 };
 
 export default Budget;
