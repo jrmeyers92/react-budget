@@ -1,17 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
+import "./App.css";
 import Login from "./pages/Login";
-import Home from "./pages/Home";
+import Overview from "./pages/Overview";
+import Nav from "./components/Nav";
+import SecondaryNav from "./components/SecondaryNav";
+import Budget from "./pages/Budget";
 import { Switch, Route } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+	App: {
+		backgroundColor: "rgb(255,255,255)",
+	},
+}));
 
 function App() {
+	const classes = useStyles();
+	const [userName, setUserName] = useState("");
+	const [cash, setCash] = useState(3404.49);
+	const [creditCardDebt, setCreditCardDebt] = useState(394.49);
+
+	const setTheUserName = (name) => {
+		setUserName(name);
+	};
+
 	return (
-		<div className='App'>
+		<div className={classes.App}>
 			<Switch>
 				<Route exact path='/'>
-					<Login />
+					<Nav userName={userName} />
+					<SecondaryNav />
+					<Login setTheUserName={setTheUserName} />
 				</Route>
-				<Route path='/home'>
-					<Home />
+
+				<Route path='/overView'>
+					<Nav userName={userName} />
+					<SecondaryNav />
+					<Overview />
+				</Route>
+				<Route path='/budget'>
+					<Nav userName={userName} />
+					<SecondaryNav />
+					<Budget />
 				</Route>
 			</Switch>
 		</div>

@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 	},
 });
 
-const Login = (props) => {
+const Login = ({ setTheUserName }) => {
 	const classes = useStyles();
 	const [loginUsername, setLoginUsername] = useState("");
 
@@ -38,8 +38,7 @@ const Login = (props) => {
 						<LockIcon />
 					</Avatar>
 				</Grid>
-				<form>
-					{/* onSubmit={props.setTheUsername(loginUsername)} */}
+				<form onSubmit={setTheUserName(loginUsername)}>
 					<TextField
 						label='Username'
 						placeholder='Enter Username'
@@ -54,7 +53,6 @@ const Login = (props) => {
 						label='Password'
 						type='password'
 						placeholder='Enter Password'
-						type='password'
 						fullWidth
 						required
 					/>
@@ -62,7 +60,7 @@ const Login = (props) => {
 						control={<Checkbox name='checkedB' color='primary' />}
 						label='Remember me'
 					/>
-					<Link to='/home'>
+					<Link to='/overview'>
 						<Button
 							type='submit'
 							color='primary'
