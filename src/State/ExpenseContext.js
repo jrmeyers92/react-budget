@@ -8,13 +8,13 @@ export const ExpenseProvider = ({ children }) => {
 			name: "Car Insurance",
 			Catagory: "Auto & Transport",
 			dollars: 100,
-			spent: 0,
+			spent: 100,
 		},
 		{
 			name: "Gas & Fuel",
 			Catagory: "Auto & Transport",
 			dollars: 80,
-			spent: 0,
+			spent: 70,
 		},
 		{
 			name: "Internet",
