@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { ExpenseContext } from "../../State/ExpenseContext";
 import { makeStyles } from "@material-ui/core/styles";
 import ProgressBar from "./Components/ProgressBar";
+import { Route } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
 	budgetDiv: {
@@ -61,7 +62,9 @@ const Budget = () => {
 		<div className={classes.budgetDiv}>
 			<Grid xs={10} md={8}>
 				<Paper className={classes.paper}>
-					<Button variant='outlined'>Create a Budget</Button>
+					<Route to='/createbudger'>
+						<Button variant='outlined'>Create a Budget</Button>
+					</Route>
 					{expense}
 				</Paper>
 			</Grid>
