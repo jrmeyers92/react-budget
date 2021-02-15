@@ -8,7 +8,7 @@ import Budget from "./pages/Budget/Budget";
 import { Switch, Route } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { ExpenseProvider } from "./State/ExpenseContext";
-
+import CreateBudget from "./pages/CreateBudget/CreateBudget";
 const useStyles = makeStyles((theme) => ({
 	App: {
 		backgroundColor: "rgb(250,250,250)",
@@ -44,6 +44,9 @@ function App() {
 						<Nav userName={userName} />
 						<SecondaryNav />
 						<Budget />
+					</Route>
+					<Route path='/createbudget'>
+						<CreateBudget />
 					</Route>
 				</ExpenseProvider>
 			</Switch>

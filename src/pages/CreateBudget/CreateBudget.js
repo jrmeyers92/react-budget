@@ -1,9 +1,12 @@
+import { Grid, Paper } from "@material-ui/core";
 import React from "react";
 
 const CreateBudget = () => {
 	return (
 		<div>
-			<Paper />
+			<Grid container>
+				<Paper></Paper>
+			</Grid>
 		</div>
 	);
 };
